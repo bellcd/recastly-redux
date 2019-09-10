@@ -48,6 +48,7 @@ describe('Action dispatchers', function() {
     });
   });
   describe('handleVideoSearch', function() {
+    // debugger;
     before(function () {
       mockReducer.reset();
       changeVideo.reset();
