@@ -13,7 +13,6 @@ var handleVideoSearch = q => {
 
   return function(dispatch) {
     return searchYouTube(obj, data => {
-      debugger;
       console.log('we got to search you tube');
       // console.log(changeVideoList(data))
       dispatch(changeVideoList(data));
