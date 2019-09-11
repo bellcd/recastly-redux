@@ -3,9 +3,14 @@ import Redux from 'redux';
 var currentVideoReducer = (state, action) => {
   //TODO: define a reducer for the currentVideo field of our state.
   state = state || null;
+  // debugger;
   if (action.type === 'CHANGE_VIDEO') {
     let newVideo = { video: action.video };
-    return newVideo.video;
+    if (newVideo.video === undefined) {
+      return state;
+    } else {
+      return newVideo.video;
+    }
   } else {
     return state;
   }
