@@ -11,7 +11,9 @@ class Search extends React.Component {
   }
 
   handleInputChange(e) {
-    this.props.getYouTubeVideos(e.target.value);
+    // the name of the prop changed, because the test suite seemed to want it ...
+    // this.props.getYouTubeVideos(e.target.value);
+    this.props.handleSearchInputChange(e.target.value);
     this.setState({
       value: e.target.value
     });

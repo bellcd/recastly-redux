@@ -14,7 +14,6 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     handleSearchInputChange: e => {
-      debugger;
       dispatch(handleVideoSearch(e));
     }
   }

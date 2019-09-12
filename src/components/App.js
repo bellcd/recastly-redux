@@ -18,7 +18,7 @@ class App extends React.Component {
     //   videos: [],
     //   currentVideo: null
     // };
-    // this.getYouTubeVideos = this.getYouTubeVideos.bind(this);
+    this.getYouTubeVideos = this.getYouTubeVideos.bind(this);
   }
 
   componentDidMount() {
@@ -31,19 +31,19 @@ class App extends React.Component {
   //   this.setState({currentVideo: video});
   // }
 
-  // getYouTubeVideos(query) {
-  //   var options = {
-  //     key: this.props.API_KEY,
-  //     query: query
-  //   };
+  getYouTubeVideos(query) {
+    var options = {
+      key: this.props.API_KEY,
+      query: query
+    };
 
-  //   this.props.searchYouTube(options, (videos) =>
-  //     this.setState({
-  //       videos: videos,
-  //       currentVideo: videos[0]
-  //     })
-  //   );
-  // }
+    this.props.searchYouTube(options, (videos) =>
+      this.setState({
+        videos: videos,
+        currentVideo: videos[0]
+      })
+    );
+  }
 
   //TODO: swap out the React components below for the container components
   //  you wrote in the 'containers' directory.
