@@ -3,8 +3,8 @@ import Search from './../components/Search.js';
 import handleSearchChange from '../actions/search.js';
 import handleVideoSearch from '../actions/search.js';
 
+// TODO: not sure this is needed ... or at least having key:values in the return object
 const mapStateToProps = state => {
-  debugger;
   return {
     video: state.video,
     videos: state.videos
@@ -14,6 +14,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     handleSearchInputChange: e => {
+      debugger;
       dispatch(handleVideoSearch(e));
     }
   }
