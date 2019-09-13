@@ -8,6 +8,7 @@ import React from 'react';
 import SearchContainer from '../containers/SearchContainer.js';
 import VideoListContainer from '../containers/VideoListContainer.js';
 import VideoPlayerContainer from '../containers/VideoPlayerContainer.js';
+import AutoPlayContainer from '../containers/AutoPlayContainer.js';
 
 class App extends React.Component {
   constructor(props) {
@@ -23,6 +24,7 @@ class App extends React.Component {
 
   componentDidMount() {
     this.getYouTubeVideos('react tutorials');
+    console.log('this.props.store', this.props.store);
   }
 
   // I believe we've moved all of this functionality to happen in other modules
@@ -32,9 +34,11 @@ class App extends React.Component {
   // }
 
   getYouTubeVideos(query) {
+    // debugger;
     var options = {
       key: this.props.API_KEY,
-      query: query
+      query: query,
+      autoplay: this.props.store.getState().autoPlay // ??
     };
 
     this.props.searchYouTube(options, (videos) =>
@@ -55,6 +59,7 @@ class App extends React.Component {
             {/* switching the <Search> presentational component with the <SearchContainer> container component */}
             {/* <Search getYouTubeVideos={this.getYouTubeVideos}/> */}
             <SearchContainer/>
+            <AutoPlayContainer/>
           </div>
         </nav>
         <div className="row">

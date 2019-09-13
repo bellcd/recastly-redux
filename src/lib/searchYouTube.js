@@ -1,11 +1,13 @@
-var searchYouTube = ({key, query, max = 5}, callback) => {
+var searchYouTube = ({key, query, max = 5, autoplay = 0}, callback) => {
+  // debugger;
   $.get('https://www.googleapis.com/youtube/v3/search', {
     part: 'snippet',
     key: key,
     q: query,
     maxResults: max,
     type: 'video',
-    videoEmbeddable: 'true'
+    videoEmbeddable: 'true',
+    autoplay: autoplay
   })
     .done(({items}) => {
       if (callback) {
