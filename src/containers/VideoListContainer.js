@@ -11,7 +11,8 @@ const mapStateToProps = state => {
 // define mapDispatchToProps
 const mapDispatchToProps = dispatch => {
   return {
-    // we need this here because this click handler is passed from this component (VideoList), to it's child (VideoListHandler) through normal React props (ie, NOT redux. There's no container component for the VideoListEntry presentational component)
+    // we need this here because this click handler is passed from this component (VideoList), to it's child (VideoListHandler) through normal React props (ie, NOT redux.
+    // There's no container component for the VideoListEntry presentational component)
     handleVideoListEntryTitleClick: video => {
       dispatch(changeVideo(video));
     }
